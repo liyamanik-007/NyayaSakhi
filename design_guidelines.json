@@ -1,0 +1,101 @@
+{
+  "theme": "LIGHT",
+  "archetype": "3 (Pastel & Soft) modified for deep calm",
+  "domain": "Mental Health & Legal Safety",
+  "target_audience": "Women in distress or panic needing emotional safety and legal clarity",
+  "colors": {
+    "background": {
+      "primary": "#FDFBFF",
+      "secondary": "#F4EEF9",
+      "glass": "bg-white/70 backdrop-blur-xl"
+    },
+    "brand": {
+      "soft_purple": "#D8B4E2",
+      "deep_purple": "#4A3254",
+      "lavender_wash": "#F0E6F7"
+    },
+    "text": {
+      "primary": "#2D2331",
+      "secondary": "#6B5A74",
+      "inverse": "#FFFFFF"
+    },
+    "states": {
+      "emergency_bg": "#FEF2F2",
+      "emergency_text": "#B91C1C",
+      "emergency_button": "#DC2626",
+      "success_soft": "#ECFDF5"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "headings": "Nunito, sans-serif",
+      "body": "Figtree, sans-serif",
+      "instructions": "Import both from Google Fonts. Nunito provides friendly, rounded safety, Figtree gives high legibility for dense legal text."
+    },
+    "scale": {
+      "h1": "text-3xl sm:text-4xl tracking-tight font-bold text-[#2D2331]",
+      "h2": "text-2xl sm:text-3xl tracking-tight font-semibold text-[#2D2331]",
+      "h3": "text-xl sm:text-2xl font-medium text-[#4A3254]",
+      "body": "text-base leading-relaxed text-[#2D2331]",
+      "small": "text-sm text-[#6B5A74]"
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous spacing. Cognitive ease to reduce panic.",
+    "container": "max-w-md mx-auto min-h-screen bg-[#FDFBFF] shadow-2xl overflow-x-hidden relative flex flex-col",
+    "paddings": {
+      "screen": "p-6 sm:p-8",
+      "card": "p-5 sm:p-6"
+    },
+    "border_radius": {
+      "card": "rounded-3xl",
+      "button": "rounded-full"
+    }
+  },
+  "components": {
+    "cards": {
+      "style": "bg-white border border-[#F0E6F7] shadow-[0_4px_24px_-8px_rgba(216,180,226,0.3)] hover:shadow-[0_8px_32px_-8px_rgba(216,180,226,0.5)] transition-all duration-300 rounded-3xl p-6"
+    },
+    "buttons": {
+      "primary": "bg-[#4A3254] text-white hover:bg-[#3A2642] rounded-full py-4 px-8 w-full font-semibold text-lg flex items-center justify-center gap-3 transition-all active:scale-[0.98]",
+      "secondary": "bg-[#F0E6F7] text-[#4A3254] hover:bg-[#E5D5F0] rounded-full py-4 px-8 w-full font-semibold text-lg flex items-center justify-center gap-3 transition-all active:scale-[0.98]",
+      "emergency": "bg-[#DC2626] text-white hover:bg-[#B91C1C] rounded-full py-4 px-8 w-full font-bold text-lg flex items-center justify-center gap-3 shadow-[0_4px_20px_-4px_rgba(220,38,38,0.5)] transition-all animate-[pulse_3s_ease-in-out_infinite]"
+    },
+    "inputs": {
+      "text": "w-full bg-[#FDFBFF] border-2 border-[#F0E6F7] focus:border-[#D8B4E2] focus:ring-4 focus:ring-[#D8B4E2]/20 rounded-2xl px-5 py-4 text-[#2D2331] placeholder:text-[#6B5A74]/50 transition-all text-lg outline-none"
+    }
+  },
+  "motion": {
+    "breathing_circle": "animate-[breathe_8s_ease-in-out_infinite] rounded-full bg-gradient-to-br from-[#D8B4E2]/40 to-[#F0E6F7]/20 shadow-[0_0_60px_rgba(216,180,226,0.4)]",
+    "page_transition": "framer-motion initial={opacity: 0, y: 15} animate={opacity: 1, y: 0} exit={opacity: 0, y: -15} transition={{duration: 0.5, ease: [0.22, 1, 0.36, 1]}}",
+    "stagger": "staggerChildren: 0.1"
+  },
+  "media_assets": {
+    "backgrounds": {
+      "calm_waves": {
+        "url": "https://images.unsplash.com/photo-1769704552351-d5059b8bb6f9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwxfHxjYWxtJTIwcHVycGxlJTIwYWJzdHJhY3QlMjBiYWNrZ3JvdW5kfGVufDB8fHx8MTc3NzA5OTM0MHww&ixlib=rb-4.1.0&q=85",
+        "description": "Soft gradient of blue and purple hues used for the calm screen background (use with low opacity and blur)."
+      }
+    },
+    "icons": {
+      "library": "lucide-react",
+      "instructions": "Use lucide-react icons: Shield (Safety), Scale (Legal), Phone (Emergency), MessageCircleHeart (Chat), Wind (Calm), ArrowRight (Navigation). Apply stroke width 1.5-2.0."
+    }
+  },
+  "accessibility": {
+    "contrast": "Ensure text contrast meets APCA standards. Do not use light grey text; use #6B5A74 for secondary text.",
+    "interactive": "Include 'data-testid' on ALL buttons, links, form inputs, and interactive cards. E.g., data-testid='nav-emergency', data-testid='login-submit'.",
+    "screen_reader": "Add aria-labels to all icon-only buttons. Ensure focus states use focus:ring-4 focus:ring-[#D8B4E2]/40."
+  },
+  "instructions_to_main_agent": [
+    "Wrap the entire application in a centered max-w-md container (`<div className='max-w-md mx-auto min-h-screen bg-[#FDFBFF] relative shadow-[0_0_50px_-12px_rgba(0,0,0,0.1)] flex flex-col'>`). This enforces a phone-like mobile-first UI on all screens.",
+    "Implement smooth Framer Motion page transitions for all routing.",
+    "In tailwind.config.js, configure a custom 'breathe' keyframe animation for the Calm screen that scales transform from 1 to 1.5 and back over 8 seconds.",
+    "The Calm screen should be visually minimal: a large glowing circle using the 'breathing_circle' style, pulsing slowly with text 'Breathe In' and 'Breathe Out' timed via React state or CSS.",
+    "The Chat interface must feel deeply empathetic. Use rounded bubbles (e.g., rounded-2xl rounded-bl-none for AI) and soft colors. Include quick-reply language chips.",
+    "For the Emergency Help Screen, use the 'emergency' button style with a subtle continuous pulse. Make the phone numbers large and clickable (`href='tel:xxx'`).",
+    "Never use raw 'card' classes from shadcn without heavy styling overrides. Use the defined 'components.cards.style' in this json to achieve the soft, safe, premium feel.",
+    "Include 'data-testid' attributes extensively to ensure reliable test execution.",
+    "Add 'lucide-react' and 'framer-motion' to the frontend project."
+  ]
+}
